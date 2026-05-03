@@ -15,7 +15,7 @@ The idea behind this project was not just to automate builds and deployments, bu
 
 ## Architecture Overview
 
-![Architecture Diagram](./architecture.png)
+![Architecture Diagram](./assets/architecture.png)
 
 > The pipeline moves code from GitHub through automated security gates (SonarQube + Trivy), builds and scans a Docker image, pushes to DockerHub, deploys to Kubernetes, and exposes metrics via Prometheus + Grafana.
 
