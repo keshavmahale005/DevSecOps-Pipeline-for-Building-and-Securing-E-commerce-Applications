@@ -1,54 +1,131 @@
-# 🚀 End-to-End DevSecOps Kubernetes Project 🌐
+🚀 Project Overview
 
-[![LinkedIn](https://img.shields.io/badge/Connect%20with%20me%20on-LinkedIn-blue.svg)](https://www.linkedin.com/in/aman-devops/)
-[![GitHub](https://img.shields.io/github/stars/AmanPathak-DevOps.svg?style=social)](https://github.com/AmanPathak-DevOps)
-![DevSecOps](https://img.shields.io/badge/DevSecOps-Mastery-brightgreen)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-Orchestration-blueviolet)
-![Jenkins](https://img.shields.io/badge/Jenkins-Automation-orange)
-![ArgoCD](https://img.shields.io/badge/ArgoCD-Continuous%20Delivery-blue)
-![Docker](https://img.shields.io/badge/Docker-Containerization-blue)
-![Terraform](https://img.shields.io/badge/Terraform-Infrastructure%20as%20Code-9cf)
+In this project, I designed and implemented a complete end-to-end DevSecOps pipeline to understand how modern software delivery works in real-world environments. Instead of just focusing on CI/CD, I made sure to include security at every stage of the pipeline, following DevSecOps principles.
+
+To make this project practical and relatable, I used a sample e-commerce application (similar to platforms like Flipkart) and built a pipeline around it that handles everything from code integration to deployment and monitoring.
+
+The idea behind this project was not just to automate builds and deployments, but to ensure that the application remains secure, reliable, and production-ready throughout its lifecycle.
+
+🎯 Why I Built This Project
+
+While learning DevOps, I realized that many pipelines focus only on automation and ignore security. In real-world companies, security is equally important and must be integrated from the beginning.
+
+So, I built this project to:
+
+Understand how DevSecOps works in practice
+Learn how to integrate security tools into CI/CD pipelines
+Gain hands-on experience with cloud infrastructure and monitoring
+Simulate how real companies manage secure deployments
+🛠 Technologies I Used
+
+To build this pipeline, I worked with a combination of cloud services, DevOps tools, and security tools:
+
+I used AWS EC2 to host the infrastructure and services
+I used Jenkins to automate the CI/CD pipeline
+I used GitHub for version control and triggering builds
+
+For security:
+
+I used SonarQube to check code quality and detect bugs and vulnerabilities
+I used OWASP Dependency-Check to scan project dependencies for known CVEs
+I used Trivy to scan Docker images before deployment
+
+For monitoring:
+
+I used Prometheus to collect metrics
+I used Grafana to visualize system performance and pipeline activity
+
+For the application:
+
+I worked with Node.js and Java-based components
+I used Docker to containerize the application
+⚙️ How I Implemented the Pipeline
+
+I structured the pipeline in multiple stages so that each step adds value and improves security.
+
+1. Code Integration
+
+Whenever I push code to GitHub, it automatically triggers the Jenkins pipeline using webhooks. This helps in automating the entire process without manual intervention.
+
+2. Code Quality and Security Check
+
+The first step in the pipeline is static code analysis using SonarQube.
+Here, I ensured that:
+
+Code quality is maintained
+Bugs are identified early
+Security issues are detected before moving forward
+
+If the quality gate fails, the pipeline stops immediately.
+
+3. Dependency Vulnerability Scanning
+
+Next, I scan all project dependencies using OWASP Dependency-Check.
+This step is important because even if our code is secure, external libraries can introduce vulnerabilities.
+
+4. Build and Containerization
+
+Once the code passes all checks, Jenkins builds the application and creates a Docker image.
+I also added version tagging so that builds can be tracked easily.
+
+5. Container Security
+
+Before deploying, I scan the Docker image using Trivy.
+This ensures that:
+
+The base image is secure
+No critical vulnerabilities are present
+
+If high-risk issues are found, the pipeline is stopped.
+
+6. Deployment
+
+After passing all security checks, the Docker image is pushed to a registry and deployed.
+In my setup, I used EC2 and also explored Kubernetes-based deployment.
+
+7. Monitoring and Observability
+
+To understand how the system behaves in real time, I integrated Prometheus and Grafana.
+
+With this setup, I can monitor:
+
+Application performance
+System resource usage
+Pipeline activity
+
+This helped me understand how monitoring works in production environments.
+
+🔒 Key Practices I Followed
+
+While building this project, I focused on following real-world DevSecOps practices:
+
+I applied shift-left security, meaning security checks happen early in the pipeline
+I automated all security scans instead of doing manual checks
+I ensured that only secure builds are deployed
+I implemented monitoring to track system performance
 
 
-![Infrastructure Diagram](assets/Infra.gif)
+🎯 What I Learned
 
-Welcome to an immersive DevSecOps learning experience! This project guides you through deploying a Tetris game on AWS EKS while mastering the art of DevSecOps.
+This project gave me strong hands-on experience in:
 
-## Directories 📂
+Designing and building CI/CD pipelines
+Integrating security tools into DevOps workflows
+Working with Docker and container security
+Using AWS for infrastructure setup
+Monitoring applications using Prometheus and Grafana
 
-1. **EKS-TF:** Explore Terraform scripts for deploying EKS clusters on AWS.
-2. **Jenkins-Pipeline-Code:** Jenkins pipeline code for automated CI/CD.
-3. **Jenkins-Server-TF:** Terraform scripts for provisioning Jenkins servers on AWS EC2.
-4. **Manifest-file:** Kubernetes manifest files for Tetris application deployment.
-5. **Tetris-V1:** Initial version of the Tetris game application.
-6. **Tetris-V2:** Enhanced version of the Tetris game application.
+Most importantly, I learned how real-world DevSecOps pipelines are designed and why security is critical in modern applications.
 
-## Getting Started 🚀
+💡 Final Thoughts
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/AmanPathak-DevOps/End-to-End-Kubernetes-DevSecOps-Tetris-Project.git
-2. **Explore the Directories:**
-   Navigate into each directory to find detailed scripts, pipelines, and configurations.
+This project helped me bridge the gap between theory and real-world implementation.
+It gave me confidence in building secure, automated pipelines and understanding how different tools work together in a production-like environment.
 
-3. **Follow the Blog:**
-   Implementation details and insights are documented in the associated [blog post](https://amanpathakdevops.medium.com/devsecops-mastery-a-step-by-step-guide-to-deploying-tetris-on-aws-eks-with-jenkins-and-argocd-3adcf21b3120).
+I plan to extend this project further by adding:
 
-## Tools Explored 🛠️
-1. **Jenkins:** Automated CI/CD pipelines
-2. **ArgoCD:** Continuous deployment to Kubernetes
-3. **Kubernetes:** Orchestration for containerized applications
-4. **Trivy:** Container vulnerability scanner
-5. **OWASP Dependency-Check:** Ensuring secure dependencies
-6. **Docker:** Containerized application deployment
-7. **SonarQube:** Unveiling code quality insights
-8. **Terraform:** Infrastructure as Code for AWS EKS
+Kubernetes-based auto-scaling
+Terraform-based infrastructure provisioning
+Advanced alerting and logging systems
 
-## Blog Implementation 📝
-   To implement this project, follow the step-by-step guide in our detailed [blog post](https://amanpathakdevops.medium.com/devsecops-mastery-a-step-by-step-guide-to-deploying-tetris-on-aws-eks-with-jenkins-and-argocd-3adcf21b3120). Learn how each tool plays a crucial role in achieving DevSecOps excellence.
-
-## Acknowledgments 🙌
-   Special thanks to the open-source community and the contributors who make learning and collaboration an incredible journey.
-
-## License 📄
-   This project is licensed under the Apache-2.0 license see the [LICENSE](http://www.apache.org/licenses/) file for details.
+Author : Keshav R. Mahale
