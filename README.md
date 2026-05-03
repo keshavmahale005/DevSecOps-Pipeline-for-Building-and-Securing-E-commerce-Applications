@@ -1,12 +1,3 @@
-🚀 Project Overview
-
-In this project, I designed and implemented a complete end-to-end DevSecOps pipeline to understand how modern software delivery works in real-world environments. Instead of just focusing on CI/CD, I made sure to include security at every stage of the pipeline, following DevSecOps principles.
-
-To make this project practical and relatable, I used a sample e-commerce application (similar to platforms like Flipkart) and built a pipeline around it that handles everything from code integration to deployment and monitoring.
-
-The idea behind this project was not just to automate builds and deployments, but to ensure that the application remains secure, reliable, and production-ready throughout its lifecycle.
-
-
 # DevSecOps Pipeline for E-commerce Applications
 
 > End-to-end secure CI/CD pipeline integrating automated security scanning, container orchestration, and full-stack observability — achieving **60% faster deployments** and **99.9% uptime** in production.
@@ -15,7 +6,7 @@ The idea behind this project was not just to automate builds and deployments, bu
 
 ## Architecture Overview
 
-![Architecture Diagram](./assets/architecture.png)
+![Architecture Diagram](./assets/architecture.svg)
 
 > The pipeline moves code from GitHub through automated security gates (SonarQube + Trivy), builds and scans a Docker image, pushes to DockerHub, deploys to Kubernetes, and exposes metrics via Prometheus + Grafana.
 
@@ -148,4 +139,3 @@ stages:
 
 **Keshav Rohidas Mahale** — DevOps Engineer  
 [LinkedIn](https://www.linkedin.com/in/keshavmahale/) | [GitHub](https://github.com/keshavmahale005) | keshavmahale005@gmail.com
-ing and logging systems
