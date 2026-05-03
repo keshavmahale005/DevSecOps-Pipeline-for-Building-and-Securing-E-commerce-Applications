@@ -1,0 +1,123 @@
+<svg width="900" height="560" viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="900" height="560" fill="#f8f9fa" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" font-size="17" font-weight="bold" fill="#1a1a2e">DevSecOps Pipeline — E-commerce Application</text>
+
+  <!-- ── ROW 1 LABELS ── -->
+  <text x="80" y="72" text-anchor="middle" font-size="11" fill="#666">Source</text>
+  <text x="220" y="72" text-anchor="middle" font-size="11" fill="#e05c5c">Security gate</text>
+  <text x="360" y="72" text-anchor="middle" font-size="11" fill="#666">Build</text>
+  <text x="500" y="72" text-anchor="middle" font-size="11" fill="#e05c5c">Security gate</text>
+  <text x="650" y="72" text-anchor="middle" font-size="11" fill="#666">Registry</text>
+
+  <!-- GitHub -->
+  <rect x="26" y="82" width="108" height="56" rx="8" fill="#e8e8f0" stroke="#9898b8" stroke-width="1"/>
+  <text x="80" y="108" text-anchor="middle" font-size="13" font-weight="bold" fill="#2d2d5e">GitHub</text>
+  <text x="80" y="125" text-anchor="middle" font-size="11" fill="#555">Push to main</text>
+
+  <!-- Arrow -->
+  <line x1="134" y1="110" x2="158" y2="110" stroke="#aaa" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- SonarQube -->
+  <rect x="160" y="82" width="118" height="56" rx="8" fill="#ddeeff" stroke="#5588cc" stroke-width="1"/>
+  <text x="219" y="105" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a3d6e">SonarQube</text>
+  <text x="219" y="122" text-anchor="middle" font-size="11" fill="#2255aa">Quality gate</text>
+  <text x="219" y="152" text-anchor="middle" font-size="10" fill="#e05c5c">✕ blocks on critical vuln</text>
+
+  <!-- Arrow -->
+  <line x1="278" y1="110" x2="302" y2="110" stroke="#aaa" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Docker Build -->
+  <rect x="304" y="82" width="112" height="56" rx="8" fill="#d4f5ec" stroke="#2a9d8f" stroke-width="1"/>
+  <text x="360" y="105" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a5c52">Docker build</text>
+  <text x="360" y="122" text-anchor="middle" font-size="11" fill="#1a7a6e">Multi-stage image</text>
+
+  <!-- Arrow -->
+  <line x1="416" y1="110" x2="440" y2="110" stroke="#aaa" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Trivy -->
+  <rect x="442" y="82" width="112" height="56" rx="8" fill="#fff3cd" stroke="#f0a500" stroke-width="1"/>
+  <text x="498" y="105" text-anchor="middle" font-size="13" font-weight="bold" fill="#7a5200">Trivy scan</text>
+  <text x="498" y="122" text-anchor="middle" font-size="11" fill="#996600">CVE image check</text>
+  <text x="498" y="152" text-anchor="middle" font-size="10" fill="#e05c5c">✕ blocks on HIGH/CRITICAL</text>
+
+  <!-- Arrow -->
+  <line x1="554" y1="110" x2="578" y2="110" stroke="#aaa" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- DockerHub -->
+  <rect x="580" y="82" width="138" height="56" rx="8" fill="#ede0ff" stroke="#8855cc" stroke-width="1"/>
+  <text x="649" y="105" text-anchor="middle" font-size="13" font-weight="bold" fill="#3d1a6e">DockerHub</text>
+  <text x="649" y="122" text-anchor="middle" font-size="11" fill="#6633aa">Image registry</text>
+
+  <!-- Arrow down from DockerHub to K8s -->
+  <line x1="649" y1="138" x2="649" y2="188" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="649" y1="188" x2="480" y2="188" stroke="#aaa" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── Kubernetes outer box ── -->
+  <rect x="26" y="196" width="620" height="168" rx="12" fill="#e8f5e9" stroke="#388e3c" stroke-width="1.5"/>
+  <text x="336" y="220" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b5e20">Kubernetes Cluster</text>
+
+  <!-- Pod 1 -->
+  <rect x="48" y="232" width="160" height="110" rx="8" fill="#f1f8e9" stroke="#66bb6a" stroke-width="1"/>
+  <text x="128" y="258" text-anchor="middle" font-size="13" font-weight="bold" fill="#2e7d32">Pod — Replica 1</text>
+  <text x="128" y="276" text-anchor="middle" font-size="11" fill="#388e3c">Rolling deploy</text>
+  <text x="128" y="293" text-anchor="middle" font-size="11" fill="#388e3c">Liveness probe</text>
+  <text x="128" y="310" text-anchor="middle" font-size="11" fill="#388e3c">Readiness probe</text>
+
+  <!-- Pod 2 -->
+  <rect x="228" y="232" width="160" height="110" rx="8" fill="#f1f8e9" stroke="#66bb6a" stroke-width="1"/>
+  <text x="308" y="258" text-anchor="middle" font-size="13" font-weight="bold" fill="#2e7d32">Pod — Replica 2</text>
+  <text x="308" y="276" text-anchor="middle" font-size="11" fill="#388e3c">Rolling deploy</text>
+  <text x="308" y="293" text-anchor="middle" font-size="11" fill="#388e3c">Liveness probe</text>
+  <text x="308" y="310" text-anchor="middle" font-size="11" fill="#388e3c">Readiness probe</text>
+
+  <!-- HPA -->
+  <rect x="408" y="232" width="218" height="110" rx="8" fill="#e3f2fd" stroke="#1e88e5" stroke-width="1"/>
+  <text x="517" y="258" text-anchor="middle" font-size="13" font-weight="bold" fill="#0d47a1">HPA Autoscaler</text>
+  <text x="517" y="276" text-anchor="middle" font-size="11" fill="#1565c0">CPU-based scaling</text>
+  <text x="517" y="293" text-anchor="middle" font-size="11" fill="#1565c0">Zero-downtime updates</text>
+  <text x="517" y="310" text-anchor="middle" font-size="11" fill="#1565c0">99.9% uptime</text>
+
+  <!-- Arrow down to monitoring -->
+  <line x1="336" y1="364" x2="336" y2="398" stroke="#aaa" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── Monitoring row ── -->
+  <text x="450" y="392" text-anchor="middle" font-size="11" fill="#666">Observability stack</text>
+
+  <!-- Prometheus -->
+  <rect x="26" y="406" width="200" height="60" rx="8" fill="#fff0e6" stroke="#e64a19" stroke-width="1"/>
+  <text x="126" y="432" text-anchor="middle" font-size="13" font-weight="bold" fill="#7a2700">Prometheus</text>
+  <text x="126" y="450" text-anchor="middle" font-size="11" fill="#bf360c">Metrics scrape + alerting</text>
+
+  <!-- Arrow -->
+  <line x1="226" y1="436" x2="260" y2="436" stroke="#aaa" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Grafana -->
+  <rect x="262" y="406" width="200" height="60" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="362" y="432" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b5e20">Grafana</text>
+  <text x="362" y="450" text-anchor="middle" font-size="11" fill="#388e3c">Real-time dashboards</text>
+
+  <!-- Arrow -->
+  <line x1="462" y1="436" x2="496" y2="436" stroke="#aaa" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Node Exporter -->
+  <rect x="498" y="406" width="200" height="60" rx="8" fill="#e8e8f0" stroke="#5c5c8a" stroke-width="1"/>
+  <text x="598" y="432" text-anchor="middle" font-size="13" font-weight="bold" fill="#2d2d5e">Node Exporter</text>
+  <text x="598" y="450" text-anchor="middle" font-size="11" fill="#444">Host-level metrics</text>
+
+  <!-- ── Key results banner ── -->
+  <rect x="26" y="488" width="848" height="48" rx="8" fill="#1a1a2e"/>
+  <text x="450" y="508" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">Key Results</text>
+  <text x="450" y="526" text-anchor="middle" font-size="11" fill="#ccccdd">60% faster deployments  ·  40% fewer vulnerabilities  ·  50% faster incident detection  ·  99.9% uptime</text>
+
+  <!-- Arrow marker def -->
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#aaa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+</svg>
