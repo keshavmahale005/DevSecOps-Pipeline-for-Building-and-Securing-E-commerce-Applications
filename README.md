@@ -271,5 +271,3 @@ I plan to extend this project further by adding:
 Kubernetes-based auto-scaling
 Terraform-based infrastructure provisioning
 Advanced alerting and logging systems
-
-Author : Keshav R. Mahale
