@@ -137,5 +137,5 @@ stages:
 
 ## Author
 
-**Keshav Rohidas Mahale** — DevOps Engineer  
+**Keshav R. Mahale** — DevOps Engineer  
 [LinkedIn](https://www.linkedin.com/in/keshavmahale/) | [GitHub](https://github.com/keshavmahale005) | keshavmahale005@gmail.com
